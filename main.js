@@ -56,12 +56,12 @@ scene.add(lightHelper, gridHelper);*/
 
 
 function addBubble() {
-  const geometry = new THREE.OctahedronGeometry(0.5, 0);
+  const geometry = new THREE.OctahedronGeometry(0.7, 0);
   const material = new THREE.MeshStandardMaterial({ color: 0xFEFAE1 });
   const bubble = new THREE.Mesh(geometry, material);
 
   // randomize position for each bubble
-  const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(300));
+  const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(400));
 
   bubble.position.set(x, y, z);
   scene.add(bubble);

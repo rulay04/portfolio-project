@@ -5,7 +5,29 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
   <title>Rusayla's Website</title>
+  <script>
+    $(document).on("scroll", function () {
+      var pageTop = $(document).scrollTop();
+      var pageBottom = pageTop + $(window).height();
+      var infoElements = $(".info");
+
+      infoElements.each(function () {
+        var infoElement = $(this);
+        var elementTop = infoElement.offset().top;
+
+        if (elementTop < pageBottom) {
+          infoElement.addClass("visible");
+        } else {
+          infoElement.removeClass("visible");
+        }
+      });
+    });
+
+  </script>
+
 </head>
 
 <body>
@@ -21,12 +43,12 @@
 
 
     <blockquote>
-      <p>I like making stuff</p>
+      <p class="ino">I like making stuff</p>
     </blockquote>
 
     <section>
       <h2>📜 Manifesto</h2>
-      <p>
+      <p class="info">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
@@ -34,7 +56,7 @@
         laborum.
       </p>
 
-      <p>
+      <p class="info">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
@@ -42,82 +64,84 @@
         laborum.
       </p>
 
-      <p>
+      <p class="info">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
+        pariatur. <br> Here are my full project writeups: https://medium.com/@rusayla.hasan <br> As well as my github
+        repos: https://github.com/rulay04
       </p>
 
     </section>
 
     <section class="light">
-      <h2>👩🏽‍🚀 Project 1</h2>
+      <h2>👩🏽‍🚀 Projects </h2>
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
+      <h3>RPE Calc</h3>
+      <p class="info">
+        In the pursuit of leveraging technology for fitness tracking, we embarked on a project focused on using a
+        Micro:bit to calculate velocity during weightlifting exercises. The goal was to analyze this data, categorize
+        the exertion level using a defined Rate of Perceived Exertion (RPE) scale, and calculate power output, as well
+        as create a graph to reflect their trial results. The project involved creating a web interface using React,
+        Node.js, and CSS to visualize and interpret the collected data.
       </p>
 
-      <h2>🏆 Accomplishments</h2>
+      <h3>Interview Chatbot</h3>
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
+      <p class="info">
+        With the goal of enhancing interview preparation through innovative technology, I developed an Interview
+        Chatbot. The primary goal was to create an interactive platform that assists users in preparing for job
+        interviews. The project involves leveraging the Flask framework for the backend, HTML for the user interface,
+        and CSS for
+        styling. The bot is able to ask several questions in list form, as well as help users improve their answers by
+        providing advice, as well as coding problems and analyze the user's code, increasing in difficulty.
       </p>
 
     </section>
 
     <blockquote>
-      <p>The best way out is always through <br>-Robert Frost</p>
+      <p class="ino">The best way out is always through <br>-Robert Frost</p>
     </blockquote>
 
     <section class="left">
-      <h2>🌮 Other Projects</h2>
+      <h2>🌮 More Projects</h2>
 
       <h3>Tic Tac Toe</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
+      <p class="info">
+        In the quest to enhance my understanding of web development, I undertook a project to create a Tic-Tac-Toe game.
+        The primary objective was to gain insights into building interactive and dynamic user interfaces using React.
+        The project involved using Node.js for the backend and React for the frontend, with HTML and CSS contributing to
+        the overall structure and styling. It taught me a lot about component diagrams and their importance in building
+        a seamless UI.
+      </p>
+      <h3>IGN Ratings Web Scraper</h3>
+      <p class="info">
+        In the pursuit of automating and enhancing data analysis, I embarked on a web scraping project utilizing Jupyter
+        Notebook, Pandas, Beautiful Soup, and the Requests library. The primary objective was to extract information
+        from online sources, specifically from a chart, and enrich the dataset with additional details fetched from
+        external websites. This project provided valuable insights into networking, making requests, and parsing HTML
+        content.
       </p>
       <h3>Fashion Facade</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
-      </p>
-      <h3>Web Scraper</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
+      <p class="info">
+        “Fashion Facade” was a transformative project initiated under Girls Who Code, showcasing a commitment to raising
+        awareness about the environmental and ethical consequences of fast fashion. Developed using HTML, CSS, and
+        JavaScript on Replit, the website provided a platform to educate visitors about the hidden costs behind the
+        glamour of the fashion industry. While it was one of my very first projects (around 2020), the issue has only
+        gotten worse, which is why I still feel passionately about this cause.
       </p>
 
     </section>
 
     <blockquote>
-      <p>Thanks for visiting!</p>
+      <p class="info">Thanks for visiting!</p>
     </blockquote>
+
 
 
   </main>
 
   <script type="module" src="/main.js"></script>
-
 
 
 </body>
